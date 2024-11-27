@@ -6,6 +6,14 @@ on:
 jobs: 
   primer-pipeline:
     runs-on: ubuntu-latest
+    container:
+      image: openjdk:11
     steps:
-      - name: practica pipeline
-        run: echo "primer pipeline"
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install Ant
+      run: apt-get update && apt-get install -y ant
+
+    - name: Build with Ant
+      run: ant build 
