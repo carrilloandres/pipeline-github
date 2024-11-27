@@ -1,0 +1,11 @@
+name: pipeline
+
+on:
+    push:
+
+jobs: 
+  primer-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: practica pipeline
+        run: echo "primer pipeline"
